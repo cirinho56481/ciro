@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title> 70% off | Relieve nerve pain and restore a healthy nervous system with Nerve Freedom </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Notification styles */
+        #someone-purchased {
+            padding: 5px 10px;
+            background: #f1f1f1;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+
+        #someone-purchased img {
+            max-height: 60px;
+            margin-right: 10px;
+        }
+
+        #someone-purchased p {
+            margin: 0;
+            line-height: 26px;
+            font-size: 15px;
+        }
+
+        #someone-purchased p a {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Popup counter styles */
+        .popMeUpGC {
+            z-index: 99999;
+            padding: 0.1em;
+            position: fixed;
+            right: 0px;
+            width: 280px;
+            bottom: 0px;
+            background: #b31000;
+            border: 1px solid #c0c0c0;
+            color: #fbfbfb;
+            font-size: initial;
+            line-height: normal;
+        }
+
+        .popMeUpGC p {
+            font-size: 12px;
+            padding: 0 5px;
+            color: #fbfbfb;
+            margin: 0;
+        }
+
+        .closeit {
+            position: absolute;
+            right: 5px;
+            top: 0px;
+            display: block;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Navbar styles */
+        header {
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar {
+            position: relative;
+            min-height: 78px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            background: #ffffff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1170px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .navbar-header {
+            float: left;
+        }
+
+        .navbar-brand {
+            float: left;
+            height: 50px;
+            padding: 2px 10px;
+        }
+
+        .navbar-brand img {
+            width: 200%;
+            max-width: 250px;
+        }
+
+        .navbar-collapse {
+            float: right;
+        }
+
+        .navbar-nav {
+            float: left;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+        }
+
+        .navbar-nav > li {
+            display: inline-block;
+        }
+
+        .navbar-nav > li > a {
+            position: relative;
+            display: block;
+            padding: 15px 15px;
+            line-height: 50px;
+            color: #777;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .navbar-nav > li > a:hover {
+            text-shadow: 0px 2px 2px #777;
+            color: #fff;
+        }
+
+        .navbar-toggle {
+            position: relative;
+            float: right;
+            padding: 9px 10px;
+            margin-top: 8px;
+            margin-right: 15px;
+            margin-bottom: 8px;
+            background-color: transparent;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: none;
+        }
+
+        /* Content styles */
+        .content {
+            padding: 20px;
+        }
+
+        .current-category {
+            display: inline-block;
+            color: #1976D2;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 32px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            font-weight: normal;
+            color: #666;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .post-date {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .categories {
+            margin-bottom: 20px;
+        }
+
+        .categories ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .categories ul li {
+            margin-right: 20px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .categories ul li.current {
+            color: #1976D2;
+            font-weight: bold;
+        }
+
+        .image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .horizontal {
+            width: 100%;
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .social span {
+            margin-right: 10px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .social img {
+            margin-right: 10px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 30px 0 20px;
+        }
+
+        .coupon {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 30px 0 10px;
+        }
+
+        .claim-now {
+            text-align: center;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .stock-update {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        .stock-update img {
+            margin-right: 10px;
+        }
+
+        .stock-update p {
+            margin: 0;
+        }
+
+        .stock-update span {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        /* Order block styles */
+        .matreshka__wrapper {
+            margin-bottom: 20px;
+        }
+
+        .matreshka__container {
+            display: flex;
+            justify-content: space-around;
+            column-gap: 10px;
+        }
+
+        .matreshka__item {
+            position: relative;
+        }
+
+        .matreshka__item img {
+            max-width: 250px;
+            width: 100%;
+            border-radius: 12%;
+            box-shadow: 0 0 0 0 rgb(0 0 67 / 70%);
+            animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+        }
+
+        .click-here {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 40px;
+            color: #fff;
+            text-shadow: 1px 1px 5px #000;
+            pointer-events: none;
+        }
+
+        .win {
+            display: none;
+        }
+
+        .win p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0;
+            margin: 0 !important;
+            line-height: 1;
+            color: #d5d5d5;
+            font-size: 60px;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px #000;
+        }
+
+        .grats span {
+            color: #20d12e !important;
+        }
+
+        .order_block {
+            text-align: center;
+            margin: 30px 0;
+            display: none;
+        }
+
+        .order_block img {
+            max-width: 350px;
+            margin-bottom: 15px;
+        }
+
+        .order_block .button {
+            display: inline-block;
+            background-color: #71c341;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .order_block .button:hover {
+            background-color: #62b234;
+        }
+
+        /* Comments styles */
+        .comm {
+            font-size: 24px;
+            margin: 40px 0 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .comments {
+            margin-bottom: 30px;
+        }
+
+        .comment {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .comment .ava {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .comment p {
+            margin: 0;
+            width: calc(100% - 75px);
+        }
+
+        .comment p.comm-date {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: block;
+            text-align: center;
+            background-color: #71c341;
+            color: white !important;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 30px auto;
+            max-width: 450px;
+        }
+
+        .button:hover {
+            background-color: #62b234;
+        }
+
+        /* Responsive styles */
+        @media only screen and (max-width: 767px) {
+            .navbar-nav {
+                display: block;
+                width: auto;
+                float: none;
+            }
+
+            .navbar-nav > li {
+                display: block;
+            }
+
+            .navbar-toggle {
+                display: block;
+            }
+
+            .navbar-header {
+                text-align: center;
+            }
+
+            .navbar-brand {
+                padding: 5px 10px;
+                margin: 0 auto;
+                display: block;
+                float: left;
+                width: 120px;
+            }
+
+            .navbar-collapse {
+                display: none;
+            }
+
+            .title {
+                font-size: 24px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            #someone-purchased p {
+                line-height: 17px !important;
+                font-size: 11px !important;
+            }
+
+            .click-here {
+                font-size: 24px;
+            }
+
+            .win p {
+                font-size: 40px;
+            }
+        }
+
+        @keyframes pulse {
+            to {
+                box-shadow: 0 0 0 20px rgba(0, 0, 67, 0);
+            }
+        }
+    </style>
+    <script>
+        // Função para atualizar a data diariamente
+        function updateCurrentDate() {
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            const date = new Date();
+            const day = date.getDate();
+            const month = months[date.getMonth()];
+            const year = date.getFullYear();
+            
+            // Formata a data como: May. 16. 2025
+            const formattedDate = `${month}. ${day}. ${year}`;
+            
+            // Atualiza todos os elementos com a classe "date"
+            const dateElements = document.getElementsByClassName("date");
+            for (let i = 0; i < dateElements.length; i++) {
+                dateElements[i].innerHTML = formattedDate;
+            }
+        }
+
+        // Executa quando a página carrega
+        window.onload = function() {
+            updateCurrentDate();
+            
+            // Configurações para o contador de pessoas
+            let viewerCount = 286;
+            
+            // Atualiza o contador a cada 6 segundos
+            setInterval(function() {
+                const change = Math.floor(Math.random() * 6) + 1;
+                if (viewerCount < 2136) {
+                    viewerCount += change;
+                    document.getElementById("mytimer1").innerHTML = viewerCount;
+                }
+            }, 6000);
+            
+            // Configurações para notificações de compra
+            const entitiesArr = [
+                "Mary from New York City, USA ordered:",
+                "Sussan from Los Angeles, USA ordered:",
+                "Anna from Chicago, USA ordered:",
+                "Mariane from Houston, USA ordered:",
+                "Jimmy from Phoenix, USA ordered:",
+                "Alexa from Philadelphia, USA ordered:",
+                "Sally from San Antonio, USA ordered:",
+                "Evelyn from San Diego, USA ordered:",
+                "Mark from Dallas, USA ordered:",
+            ];
+            
+            let iterator = 0;
+            const purchaseNotification = document.querySelector("#someone-purchased p span");
+            if (purchaseNotification) {
+                purchaseNotification.textContent = entitiesArr[iterator];
+            }
+            
+            // Alterna a notificação de compra
+            setInterval(function() {
+                const randomTime = Math.floor(Math.random() * 25) + 7;
+                const purchaseTime = document.querySelector("#someone-purchased p a");
+                if (purchaseTime) {
+                    purchaseTime.textContent = randomTime + " seconds ago";
+                }
+                
+                if (purchaseNotification) {
+                    iterator = (iterator >= entitiesArr.length - 1) ? 0 : iterator + 1;
+                    purchaseNotification.textContent = entitiesArr[iterator];
+                }
+                
+                const notification = document.getElementById("someone-purchased");
+                notification.classList.toggle("fade-in");
+                notification.classList.toggle("fade-out");
+            }, Math.floor(Math.random() * 8000 + 6000));
+        };
+
+        // Função para fechar o popup
+        function close_x() {
+            document.getElementById("popMeUPGC").style.display = "none";
+        }
+
+        // Função para lidar com cliques
+        function btnClick() {
+            console.log("Button clicked");
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="someone-purchased" class="customized fade-in" style="padding: 5px 10px; display: block">
+            <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank">
+                <img src="">
+            </a>
+            <p>
+                <span>Mariane from Chicago, US ordered:</span>
+                <a>10 seconds ago</a>
+            </p>
+        </div>
+        
+        <div class="popMeUpGC" id="popMeUPGC" style="bottom: 0px">
+            <span id="closeut" class="closeit" style="cursor: pointer" onclick="close_x();">x</span>
+            <p style="margin-right: 6px; margin-bottom: 0px; margin-top: 0px; font-style: normal; line-height: 19px; letter-spacing: 0em;">
+                <span id="mytimer1">286</span> people are reading this report right now
+            </p>
+        </div>
+        
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <span href="" class="navbar-brand"><img src="images/mobile-logo.png"></span>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a>CELEBS</a>
+                            </li>
+                            <li>
+                                <a>INGREDIENTS</a>
+                            </li>
+                            <li>
+                                <a>ORDER</a>
+                            </li>
+                            <li>
+                                <a>REVIEWS</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="content">
+            <div class="current-category">HEALTH</div>
+            <h2 class="title">
+                Stop living with the pain! Get immediate and permanent relief from neuropathy!
+            </h2>
+            <h3 class="subtitle">
+                Stop taking painkillers and suffering from recurring neuropathic pain. We have found a solution.
+            </h3>
+            <div class="post-date">
+                <span class="date">May. 16. 2025</span>
+            </div>
+            <div class="categories">
+                <ul>
+                    <li class="current">HEALTH</li>
+                    <li>Common Conditions</li>
+                    <li>Hearing Test</li>
+                    <li>Hearing Recovery</li>
+                    <li>Relieve Tinnitus</li>
+                </ul>
+            </div>
+            <img src="images/222.jpg" class="image horizontal">
+            <div class="social">
+                <span>SHARE</span>
+                <img src="images/twitter.jpg" class="">
+                <img src="images/linkedin.jpg" class="">
+                <img src="images/pinterest.jpg" class="">
+                <img src="images/email.jpg" class="">
+            </div>
+            <p>
+                <b>
+                    It was the most watched episode in Shark Tank history when sisters Donna and Rosy Khalife won over the Shark Tank panel proving the power of their natural product, which helped 10 random volunteers cure their neuropathy instantly during the LIVE show! The results were spectacular!
+                </b>
+            </p>
+            <p>
+                Donna and Rosy Khalife, sisters and chemists from MIT, net the biggest deal in Shark Tank history as all 5 Sharks teamed up to seed the company with an a staggering $2.5 million dollars! In just a short 6 months, their product has completely disrupted <b>The Neuropathy Industry</b> in the United States, and with the help of the Sharks, they are now ready to take over the world market.
+            </p>
+            <p>
+                Apparently the Khalife sisters have invented a new CBD Gummy formula that can <b>Relieve Neuropathy Instantly &amp; For Good</b>.
+            </p>
+            <p>
+                After a complete re-brand and re-packaging, the sisters are now ready to launch their new brand, <strong><a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank">Nerve Freedom</a></strong>. See the amazing demonstration below that got the Sharks ready to feed instantly!
+            </p>
+            <p>
+                As soon as their products were launched, they were sought after by many celebrities. Let's take a look at their feedback after using them:
+            </p>
+            <img src="images/qingwen.jpg" class="image horizontal">
+            <p><b>Kevin Costner</b></p>
+            <p>
+                Mom has been suffering from neuropathy for 5 years, it all started with numbness, tingling in her hands and feet, and then burning, excruciating pain in her feet that made her day unbearable. She was unable to walk properly and even daily activities were challenging because of the pain. Luckily I purchased this <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()"><b>Nerve Freedom</b></a> and I can't express how grateful I am that Mom's neuropathy is finally gone! It's so great to see her playing with my son again!
+            </p>
+            <img src="images/777.jpg" class="image horizontal">
+            <p><b>Sean Hannity</b></p>
+            <p>
+                I started taking a new medication my doctor recommended, and I started to experience some disturbing side effects. I was often unable to sleep due to the pain, and my quality of life was drastically reduced. Luckily, Shark Tank gave me a sample of <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()"><b>Nerve Freedom</b></a>, and it worked like a charm. It only took a few days for me to notice results.
+            </p>
+            <p>
+                <b>While there are a number of "supplements" on the market that are claiming to help reverse Neuropathy, the Khalife sisters have created the first gummy with a proprietary blend of vasodilators, which increases bloodflow to the nerves making it immediately relieve neuropathy pain permanently.</b>
+            </p>
+            <p>
+                Operating at the microvascular level, these gummies intricately modulate arteriolar tone, promoting enhanced perfusion to peripheral nerve endings. The orchestrated cascade of vasodilation optimizes oxygen and nutrient delivery. What this means to people without a doctorate in chemistry: <b>a proven way to relieve neuropathy</b>.
+            </p>
+            <h1>
+                What can <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank">Nerve Freedom</a> do for you?
+            </h1>
+            <p>
+                <font color="#505050"><b style="color: rgb(0, 0, 0)"><span style="font-weight: normal"><b><a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank">Nerve Freedom</a> has been found to positively affect key bodily functions, including neurological, physical, and psychological aspects. This includes, but is not limited to:</b></span></b></font><br>
+            </p>
+            <p>
+                <span style="color: rgb(0, 0, 0); font-weight: 700"><b>● Reduce chronic pain</b></span>
+            </p>
+            <p>
+                <span style="color: rgb(0, 0, 0); font-weight: 700"><b>● Alleviating sleep difficulties</b></span>
+            </p>
+            <p>
+                <span style="color: rgb(0, 0, 0); font-weight: 700"><b>● Supports joint health</b></span>
+            </p>
+            <p>
+                <span style="color: rgb(0, 0, 0); font-weight: 700"><b>● Reduce anxiety and depression</b></span>
+            </p>
+            <p>
+                <span style="color: rgb(0, 0, 0); font-weight: 700"><b>● Relieves headaches and migraines</b></span>
+            </p>
+            <p>
+                <span style="color: rgb(0, 0, 0); font-weight: 700"><b>● Natural reduction of blood sugar levels</b></span>
+            </p>
+            <p>
+                <span style="color: rgb(0, 0, 0); font-weight: 700"><b>● Maintain balance</b></span>
+            </p>
+            <p>
+                <span style="color: rgb(0, 0, 0); font-weight: 700"><b>● Reduce muscle weakness</b></span>
+            </p>
+            <p>
+                <span style="color: rgb(0, 0, 0); font-weight: 700"><b>● Restores internal organs</b></span>
+            </p>
+            <p>
+                <span style="color: rgb(0, 0, 0); font-weight: 700"><b>● Restores potency in men!</b></span>
+            </p>
+            <p>
+                <span style="color: rgb(0, 0, 0); font-weight: 700"><b>● Reduces high blood pressure and high cholesterol</b></span>
+            </p>
+            <img src="images/3BA44C75.webp" class="image horizontal" style="border-top: none">
+            <p>
+                This gummies has helped hundreds of thousands of men and women reverse their neuropathy in just the first two weeks. These men and women were completely cured of their neuropathy in record time. Some were done in as little as 11 days.
+            </p>
+            <p>
+                <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank">Nerve Freedom</a> works like never before! After testing this treatment with scientific validation, the recovery rate... and I mean complete recovery rate of neuropathy is almost 100%. They no longer have torment, they no longer have pain, they feel great.
+            </p>
+            <h1>
+                The butterfly effect in the elderly and patients with neuropathic pain.
+            </h1>
+            <p>
+                <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank">Nerve Freedom</a> acts like the caress of a butterfly's wings, setting off a chain reaction that relieves nerve pain and improves overall health. Starting with restoration of nerve function, to pain relief and improved ability to perform daily activities. resembles a stroke of the butterfly wing, which causes a chain reaction to improve the internal organs and well-being. Starting with the normalization of lung and ending with the restoration of vision and joints.
+            </p>
+            <p><b>Light awakening</b></p>
+            <p>
+                You will wake up in the morning and get out of bed easily - you won't have to force yourself to do that anymore. You will be full of energy and strength.
+            </p>
+            <p><b>Excellent well-being and mood</b></p>
+            <p>
+                From morning and for the whole day. You can sleep well again. Feel young again. You don't need to go to the toilet all the time at night and you don't have pain anymore.
+            </p>
+            <p><b>Delicious breakfast</b></p>
+            <p>
+                Your menu will expand. You will no longer need to go on strict diets. If you eat something wrong, you will no longer have heartburn.
+            </p>
+            <p><b>Giant power</b></p>
+            <p>
+                When you leave the house, you will no longer have to worry about your legs. You will no longer perceive walking as a burden and your legs will no longer get tired or swell. No more shortness of breath and no more headaches. You will even be able to work in the garden.
+            </p>
+            <p><b>Absolute silence</b></p>
+            <p>
+                You will be calm and relaxed again. You will no longer have constant pain and will now have the opportunity to think about something else. When nothing hurts, familiar things, sounds and smells will play with new, long forgotten colors.
+            </p>
+            <h1>
+                <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank">Nerve Freedom</a> Easily Solved Neuropathy Problem.
+            </h1>
+            <p>
+                Due to <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank">Nerve Freedom</a>'s high demand, it quickly sold out. However, we encourage readers to try <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank">Nerve Freedom</a> for themselves.
+            </p>
+            <p>
+                We've got a limited time offer for lucky readers to save even more. You can enjoy up to <b>70% off.</b>
+            </p>
+            <p>
+                This is the lowest price ever, so stock may run out. At this rate, it's a steal. I'm so confident in <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank">Nerve Freedom</a>, it offers a <span style="color: rgb(255, 8, 8)">30-day money-back service</span>.
+            </p>
+            <p>
+                If you want to get rid of nerve pain and improve nerve health, make sure to use <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank">Nerve Freedom</a> every day. This product is designed to produce incredible results.
+            </p>
+            <p>
+                You might want to check&nbsp; <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank">Nerve Freedom</a>'s official site so you won't have regrets.
+            </p>
+            <!-- Seção de oferta limitada e botões com bandeira -->
+<div class="coupon">
+    <span>LIMITED TIME OFFER FOR OUR READERS</span>
+</div>
+<p class="claim-now">(CLAIM YOURS NOW BEFORE THEY'RE ALL GONE)</p>
+<div class="stock-update" id="stock-update">
+    <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()"><img src="images/checkmark.png" class=""></a>
+    <p>
+        <b>Stock Update: </b> <span>ALMOST GONE</span>. LIMITED Discounted Supply AVAILABLE as of: <b>
+            <span class="date"><font color="red">May. 16. 2025</font></span>
+        </b>
+    </p>
+</div>
+
+<!-- Seção de botões com bandeira americana -->
+<div class="matreshka__wrapper">
+    <div class="matreshka__container">
+        <div class="matreshka__item">
+            <span class="click-here">CLICK</span>
+            <img class="prewin blue b-lazy b-error" src="images/flag.png">
+            <div class="win">
+                <p class="sale"><span class="sale-blue"></span></p>
+            </div>
+        </div>
+        <div class="matreshka__item">
+            <span class="click-here">CLICK</span>
+            <img class="prewin red b-lazy b-error" src="images/flag.png">
+            <div class="win">
+                <p class="sale"><span class="sale-red"></span></p>
+            </div>
+        </div>
+        <div class="matreshka__item">
+            <span class="click-here">CLICK</span>
+            <img class="prewin yellow b-lazy b-error" src="images/flag.png">
+            <div class="win">
+                <p class="sale"><span class="sale-yellow"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="order_block">
+    <img src="images/pote" alt="" class="prod-img b-lazy">
+    <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank" class="button" id="link_offer">Order with discount</a>
+</div>
+
+<div class="spin-result-wrapper" style="display: none">
+    <div class="pop-up-window">
+        <span class="pop-up-heading"></span>
+        <p class="pop-up-text">
+            You can purchase Nerve Freedom with a 50% discount.
+        </p>
+        <!-- <span class="pop-up-button">OK</span> -->
+    </div>
+</div>
+
+<!-- Seção de comentários -->
+<h1 class="comm" id="REVIEWS">COMMENTS</h1>
+<div class="comments">
+    <div class="comment">
+        <img src="images/w5.jpg" class="ava">
+        <p><b>Elphine Darcel</b></p>
+        <p class="comm-date"><span class="date"></span></p>
+        <p>
+            My mom tried this; she has battled nerve pain her whole life. After using it a few times, she said her pain was relieved a lot!
+        </p>
+    </div>
+    <div class="comment">
+        <img src="images/m9.jpg" class="ava">
+        <p><b>Ashutosh Nirala</b></p>
+        <p class="comm-date"><span class="date"></span></p>
+        <p>
+            I didn't order the free sample last time they had this promo. I'm not going to miss it again lol.
+        </p>
+    </div>
+    <div class="comment">
+        <img src="images/w9.jpg" class="ava">
+        <p class="comm-date"><span class="date"></span></p>
+        <p>
+            I have tried everything to relieve my nerve pain and Nerve Freedom is the only thing that works. It is more natural than the medications my doctor prescribed me.
+        </p>
+    </div>
+    <div class="comment">
+        <img src="images/m5.jpg" class="ava">
+        <p><b>T. Knox</b></p>
+        <p class="comm-date"><span class="date"></span></p>
+        <p>I just claimed my samples. Hope it works!</p>
+        <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank"></a>
+    </div>
+    <div class="comment">
+        <img src="images/8c0f235e-1969-4d22-a9e2-2d7165cca1a7.jpeg" class="ava">
+        <p><b>Nate Rose</b></p>
+        <p class="comm-date"><span class="date"></span></p>
+        <p>
+            Totally worked for me! It worked just like I thought it would. I just want others to know when something works.
+        </p>
+        <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank"></a>
+    </div>
+    <div class="comment">
+        <img src="images/w17.jpg" class="ava">
+        <p><b>Ronald Chapman</b></p>
+        <p class="comm-date"><span class="date"></span></p>
+        <p>
+            Damn! I keep seeing reports about this product. they were initially sold-out when I first tried to get it. finally re-opened it back to the public!
+        </p>
+    </div>
+    <div class="comment">
+        <img src="images/4606128f-9560-408a-93fb-5ab7fe20b35a.webp" class="ava">
+        <p><b>John Carlo Santos</b></p>
+        <p class="comm-date"><span class="date"></span></p>
+        <p>
+            I'm going to give these products a chance to work their magic on me. I've tried everything out there and so far nothing has been good enough to help me.
+        </p>
+        <a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" target="_blank"></a>
+    </div>
+    <div class="comment">
+        <img src="images/m8.jpg" class="ava">
+        <p class="comm-date"><span class="date"></span></p>
+        <p>
+            Just started using this a few weeks ago and my nerve pain is much better now.
+        </p>
+    </div>
+</div>
+
+<!-- Botão final de chamada para ação -->
+<a href="https://selfcarehost.site/ux1712/" rel="noreferrer noopener" onclick="btnClick()" class="button" target="_blank" style="font-size: 23px">Click Here To Get Your Nerve Freedom</a>
+
+<!-- Scripts para interatividade -->
+<script>
+    // Código para os botões de "CLICK" com bandeira americana
+    const widgetMatreshkaSale = "50%";
+    const widgetMatreshkaSale2 = "30%";
+    const widgetMatreshkaSale3 = "15%";
+    let flag = 0;
+    
+    // Adicionando event listeners quando o documento estiver pronto
+    document.addEventListener('DOMContentLoaded', function() {
+        const prewinButtons = document.querySelectorAll(".prewin");
+        prewinButtons.forEach(function(btn) {
+            btn.addEventListener("click", function() {
+                handlePrewinClick(this);
+            });
+        });
+    });
+    
+    function handlePrewinClick(element) {
+        // Oculta o texto "CLICK"
+        const clickHere = document.querySelectorAll(".click-here");
+        clickHere.forEach(function(el) {
+            el.style.display = "none";
+        });
+        
+        // Remove animação
+        const images = document.querySelectorAll(".matreshka__item img");
+        images.forEach(function(img) {
+            img.style.animation = "none";
+        });
+        
+        if (flag === 0) {
+            flag = 1;
+            
+            // Define descontos com base na classe do elemento
+            if (element.classList.contains("red")) {
+                element.nextElementSibling.children[0].classList.add("grats");
+                document.querySelector(".sale-red").innerHTML = widgetMatreshkaSale;
+                document.querySelector(".sale-blue").innerHTML = widgetMatreshkaSale2;
+                document.querySelector(".sale-yellow").innerHTML = widgetMatreshkaSale3;
+            }
+            
+            if (element.classList.contains("blue")) {
+                element.nextElementSibling.children[0].classList.add("grats");
+                document.querySelector(".sale-blue").innerHTML = widgetMatreshkaSale;
+                document.querySelector(".sale-yellow").innerHTML = widgetMatreshkaSale2;
+                document.querySelector(".sale-red").innerHTML = widgetMatreshkaSale3;
+            }
+            
+            if (element.classList.contains("yellow")) {
+                element.nextElementSibling.children[0].classList.add("grats");
+                document.querySelector(".sale-yellow").innerHTML = widgetMatreshkaSale;
+                document.querySelector(".sale-blue").innerHTML = widgetMatreshkaSale2;
+                document.querySelector(".sale-red").innerHTML = widgetMatreshkaSale3;
+            }
+            
+            // Exibe os resultados com animações temporizadas
+            element.nextElementSibling.style.display = "block";
+            
+            setTimeout(() => {
+                document.querySelectorAll(".win").forEach(el => el.style.display = "block");
+            }, 1000);
+            
+            setTimeout(() => {
+                document.querySelector(".spin-result-wrapper").style.display = "block";
+            }, 2000);
+            
+            setTimeout(() => {
+                document.querySelector(".spin-result-wrapper").style.display = "none";
+                document.querySelector(".matreshka__wrapper").style.display = "none";
+                document.querySelector(".order_block").style.display = "block";
+                
+                // Scroll para a seção de estoque
+                const stockUpdate = document.getElementById("stock-update");
+                if (stockUpdate) {
+                    window.scrollTo({
+                        top: stockUpdate.offsetTop,
+                        behavior: "smooth"
+                    });
+                }
+            }, 4000);
+        }
+    }
+</script>
