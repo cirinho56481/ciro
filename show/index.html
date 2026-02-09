@@ -1,243 +1,355 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natural Recipe</title>
-
-    <!-- Fontes e estilos necessários -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <title>End Diabetes Now</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
+        /* --- RESET E GERAL --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Poppins', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #000;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+        a { text-decoration: none; }
+
+        /* --- LAYOUT --- */
+        .main-container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .section { margin-bottom: 25px; }
+        .content-stack { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+        .text-center { text-align: center; }
+
+        /* CLASSE PARA OCULTAR O CONTEÚDO (DELAY) */
+        .delayed-content {
+            display: none;
         }
 
-        /* Faixa vermelha superior e lateral */
-        .header-wrapper {
-            background-color: #a60d0d;
+        /* --- TIPOGRAFIA --- */
+        h2 { font-family: 'Poppins', sans-serif; }
+        
+        .headline {
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+            margin: 15px 0;
+            color: #000;
+            line-height: 1.3;
+        }
+
+        /* --- VÍDEO --- */
+        .video-wrapper {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            /* background-color removido para não interferir no player transparente se houver */
             display: flex;
+            align-items: center;
             justify-content: center;
-            align-items: center;
-            position: relative;
-            padding: 10px 0;
+            border-radius: 4px;
         }
 
-        .header-wrapper img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .scroll-header {
-            background-color: #850505;
-            color: white;
-            overflow: hidden;
-            white-space: nowrap;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .scroll-header span {
-            display: inline-block;
-            padding-right: 50px;
-            font-size: 18px;
-            font-weight: normal;
-            animation: scroll-infinite 10s linear infinite;
-        }
-
-        @keyframes scroll-infinite {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-
-        .content {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .image-section {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .image-section img {
-            max-width: 100%;
-            height: auto;
-            display: inline-block;
-        }
-
-        .video-section {
-            position: relative;
-            margin: 20px auto;
+        /* --- SEÇÃO DE PREÇOS (PRICING) --- */
+        .pricing-section {
+            width: 100%;
             max-width: 600px;
+            margin: 30px auto;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .action-button {
-            margin-top: 20px;
-            background-color: #9acd32;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
-            display: none;
+        .pricing-card {
+            border: 3px solid #888;
+            border-radius: 15px;
+            background-color: #fff;
+            margin-bottom: 25px;
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .action-button:hover {
-            background-color: #7da029;
+        /* Destaque (6 Frascos) */
+        .pricing-card.highlight {
+            background-color: #fffde8;
+            border-color: #5c4018;
         }
 
-        .footer-image {
-            display: none;
-            margin: 20px auto;
+        .card-left {
+            flex: 1;
+            min-width: 140px;
+            position: relative;
             text-align: center;
+            padding-right: 10px;
         }
 
-        .footer-image img {
-            max-width: 100%;
-            height: auto;
-            display: inline-block;
-        }
-
-        .additional-images {
+        .card-right {
+            flex: 1.5;
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px;
-            gap: 20px;
         }
 
-        .additional-images img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .footer {
-            margin-top: 50px;
-            font-size: 12px;
-            color: #666;
+        /* Selos / Badges */
+        .badge-seal {
+            position: absolute;
+            top: 50%;
+            right: -15px;
+            transform: translateY(-50%);
+            background-color: #e60000;
+            color: white;
+            font-weight: 700;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            font-size: 11px;
+            line-height: 1.1;
+            border: 2px dashed #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        /* Textos do Card */
+        .card-title {
+            color: #163a7d;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .card-supply {
+            color: #163a7d;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        /* Preço */
+        .price-box {
+            color: #145f34;
+            font-weight: 700;
+            line-height: 1;
+            margin: 5px 0;
+        }
+        .price-currency { font-size: 30px; vertical-align: top; }
+        .price-amount { font-size: 70px; letter-spacing: -2px; }
+        .price-per { font-size: 18px; color: #145f34; font-weight: 500; }
+
+        /* Botão do Card */
+        .buy-btn-yellow {
+            background-color: #ffe500;
+            color: #000;
+            font-size: 28px;
+            font-weight: 800;
+            padding: 10px 0;
+            border-radius: 10px;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+            width: 100%;
+            max-width: 280px;
+            font-family: 'Montserrat', sans-serif;
+            animation: pulse-shadow 2s infinite;
+        }
+        .buy-btn-yellow:hover { transform: scale(1.03); }
+
+        @keyframes pulse-shadow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 244, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 244, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 244, 0, 0); }
+        }
+
+        /* Totais e Ícones */
+        .total-row { font-size: 14px; color: #555; font-weight: 700; margin-bottom: 5px; }
+        .old-price { text-decoration: line-through; color: #888; margin-right: 5px; }
+        .new-price { color: #d00; font-size: 18px; }
+
+        .shipping-info {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 16px;
+            color: #000;
+            margin-top: 5px;
+        }
+
+        .payment-icons-row {
+            margin: 5px 0;
+        }
+        .payment-icons-row img {
+            max-width: 200px; /* Ajuste o tamanho da imagem dos cartões aqui se precisar */
+        }
+
+        /* Responsividade */
+        @media (max-width: 480px) {
+            .headline { font-size: 22px; }
+            .price-amount { font-size: 55px; }
+            .card-title { font-size: 20px; }
+            .buy-btn-yellow { font-size: 22px; }
+            .badge-seal { width: 60px; height: 60px; font-size: 10px; right: -5px; }
         }
     </style>
-
-    <script
-      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-      data-utmify-prevent-xcod-sck
-      data-utmify-is-click-bank
-      async
-      defer
-    ></script>
 </head>
 <body>
-    <!-- Header superior com faixa vermelha -->
-    <div class="header-wrapper">
-        <img src="images/Captura-de-Tela-2025-01-05-as-17.23.18.png" alt="Header Image">
-    </div>
 
-    <!-- Barra de rolagem no topo -->
-    <div class="scroll-header">
-        <span>
-            DAILY UPDATES ON WELLNESS AND HEALTH - DAILY UPDATES ON WELLNESS AND HEALTH - DAILY UPDATES ON WELLNESS AND HEALTH
-        </span>
-    </div>
-
-    <!-- Conteúdo principal -->
-    <div class="content">
-        <!-- Imagem acima do vídeo -->
-        <div class="image-section">
-            <img src="images/Captura-de-Tela-2025-01-05-as-18.36.32.png" alt="Mid Content Image">
+    <div class="main-container">
+        
+        <div class="section">
+            <img src="./End Diabetes Now_files/BYzDdL7484045.jpeg" alt="Logo Header" width="1179" height="191">
         </div>
 
-        <!-- Seção de vídeo -->
-        <div class="video-section">
-            <vturb-smartplayer id="vid-6849afa64bcfb260e29b8711" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/10d15ba1-6af1-4ff4-a726-9a64f39ff19d/players/6849afa64bcfb260e29b8711/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+        <div class="section">
+            <h2 class="headline">The treatment for <u><em>Black Americans</em></u> that completely reverse Diabetes</h2>
         </div>
 
-        <!-- Botão de ação -->
-        <div>
-            <a href="https://selfcarehost.online/uxx571/" target="_blank">
-                <button class="action-button" id="action-button">Yes, I want to Eliminate Diabetes!</button>
-            </a>
+        <div class="section">
+            <div class="video-wrapper">
+                <vturb-smartplayer id="vid-698a0cb6f17bd82f6aec6a28" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer> 
+                <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/10d15ba1-6af1-4ff4-a726-9a64f39ff19d/players/698a0cb6f17bd82f6aec6a28/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+                </div>
         </div>
 
-        <!-- Imagem do rodapé (Footer) com link clicável -->
-        <div class="footer-image" id="footer-image">
-            <a href="https://selfcarehost.online/uxx571/" target="_blank">
-                <img src="images/CARTOES-.webp" alt="Footer Image">
-            </a>
-        </div>
-
-        <!-- Imagens adicionais que aparecem logo após o botão -->
-        <div class="additional-images">
-            <img src="images/Captura-de-Tela-2025-01-05-as-17.24.45.png" alt="Image 1">
-            <img src="images/Captura-de-Tela-2025-01-05-as-17.26.59.png" alt="Image 2">
-            <img src="images/Captura-de-Tela-2025-01-05-as-17.25.50.png" alt="Image 3">
-            <img src="images/Captura-de-Tela-2025-01-05-as-17.28.42.png" alt="Image 4">
-        </div>
-    </div>
-
-    <!-- Rodapé -->
-    <div class="footer">
-        All Rights Reserved &copy; 2024
-    </div>
-
-    <!-- Script para mostrar o botão e imagem do rodapé após o tempo definido -->
-    <script>
-        function showButtonAfterDelay(minutes) {
-            const delay = minutes * 60 * 1000;
-            setTimeout(() => {
-                document.getElementById('action-button').style.display = 'inline-block';
-                document.getElementById('footer-image').style.display = 'block';
-            }, delay);
-        }
-
-        showButtonAfterDelay(22);
-    </script>
-
-    <!-- Código parametro link -->
-    <script>
-    // JavaScript para adicionar o parâmetro subid a todos os links da página
-    document.addEventListener('DOMContentLoaded', function() {
-        (function() {
-            // Função para obter o parâmetro subid da URL
-            function getSubidParameter() {
-                var url = new URL(window.location.href);
-                return url.searchParams.get("tid");
-            }
-            // Captura o parâmetro subid
-            var subid = getSubidParameter();
+        <div id="hidden-section" class="delayed-content">
             
-            // Verifica se o subid não está vazio ou null
-            if (subid) {
-                // Seleciona todos os links do documento
-                var links = document.querySelectorAll('a');
-                
-                // Itera sobre os links e adiciona/modifica o parâmetro subid
-                Array.prototype.forEach.call(links, function(link) {
-                    try {
-                        // Verifica se o link é um URL válido e tem protocolo http ou https
-                        var linkUrl = new URL(link.href);
-                        
-                        // Modifica o parâmetro subid do link
-                        linkUrl.searchParams.set("tid", subid); // Adiciona/modifica o parâmetro subid
-                        link.href = linkUrl.href; // Atualiza o href do link
-                    } catch (e) {
-                        // Ignora links que não têm um formato de URL válido, como mailto, tel, etc.
-                        console.warn("URL inválida ou link especial ignorado: " + link.href);
-                    }
-                });
-                
-                console.log(links.length + " links foram atualizados com o subid: " + subid);
-            } else {
-                console.log("Parâmetro subid não encontrado na URL.");
-            }
-        })();
-    });
+            <div class="section content-stack">
+
+                <div id="pricing-target" class="pricing-section">
+        
+                    <div class="pricing-card highlight">
+                        <div class="card-left">
+                            <img src="./End Diabetes Now_files/6-bottle.png" alt="6 Bottles">
+                            <div class="badge-seal">BEST<br>VALUE</div>
+                        </div>
+                        <div class="card-right">
+                            <h3 class="card-title">6 x BOTTLES</h3>
+                            <p class="card-supply">180 DAYS SUPPLY</p>
+                            
+                            <div class="price-box">
+                                <span class="price-currency">$</span><span class="price-amount">49</span><span class="price-per">/Bottle</span>
+                            </div>
+
+                            <a href="https://enduroxprime.mycartpanda.com/checkout/190130046:1?afid=FWub0Bq4k0" class="buy-btn-yellow">BUY NOW</a>
+
+                            <div class="total-row">
+                                <span class="old-price">TOTAL: $1074</span> <span class="new-price">$294</span> 👈
+                            </div>
+                            
+                            <div class="payment-icons-row">
+                                <img src="./End Diabetes Now_files/credit-cards.png" alt="Credit Cards Accepted">
+                            </div>
+
+                            <p class="shipping-info">FREE SHIPPING</p>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="card-left">
+                            <img src="./End Diabetes Now_files/3-bottle.png" alt="3 Bottles">
+                            <div class="badge-seal" style="background-color: #d10000;">MOST<br>POPULAR</div>
+                        </div>
+                        <div class="card-right">
+                            <h3 class="card-title">3 x BOTTLES</h3>
+                            <p class="card-supply">90 DAYS SUPPLY</p>
+                            
+                            <div class="price-box">
+                                <span class="price-currency">$</span><span class="price-amount">59</span><span class="price-per">/Bottle</span>
+                            </div>
+
+                            <a href="https://enduroxprime.mycartpanda.com/checkout/190130045:1?afid=FWub0Bq4k0" class="buy-btn-yellow">BUY NOW</a>
+
+                            <div class="total-row">
+                                <span class="old-price">TOTAL: $537</span> <span class="new-price">$177</span>
+                            </div>
+                            
+                            <div class="payment-icons-row">
+                                <img src="./End Diabetes Now_files/credit-cards.png" alt="Credit Cards Accepted">
+                            </div>
+
+                            <p class="shipping-info">FREE SHIPPING</p>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="card-left">
+                            <img src="./End Diabetes Now_files/2-bottle.png" alt="2 Bottles">
+                        </div>
+                        <div class="card-right">
+                            <h3 class="card-title">2 x BOTTLES</h3>
+                            <p class="card-supply">60 DAYS SUPPLY</p>
+                            
+                            <div class="price-box">
+                                <span class="price-currency">$</span><span class="price-amount">89</span><span class="price-per">/Bottle</span>
+                            </div>
+
+                            <a href="https://enduroxprime.mycartpanda.com/checkout/190130044:1?afid=FWub0Bq4k0" class="buy-btn-yellow">BUY NOW</a>
+
+                            <div class="total-row">
+                                <span class="new-price">$178</span>
+                            </div>
+                            
+                            <div class="payment-icons-row">
+                                <img src="./End Diabetes Now_files/credit-cards.png" alt="Credit Cards Accepted">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <img src="./End Diabetes Now_files/tfXcsC4767011.png" width="1600" height="586" alt="Wide Banner">
+                <img src="./End Diabetes Now_files/wYSSpR9756409.png" width="1060" height="1258" alt="Content Image 1">
+                <img src="./End Diabetes Now_files/xByFPc9756409.png" width="1060" height="670" alt="Content Image 2">
+                <img src="./End Diabetes Now_files/rJmtbC9756409.png" width="1060" height="698" alt="Content Image 3">
+                <img src="./End Diabetes Now_files/QmkQbJ9756409.png" width="1060" height="698" alt="Content Image 4">
+                <img src="./End Diabetes Now_files/vdWzwJ4597708.png" width="874" height="174" alt="Footer Banner Small">
+
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="./End Diabetes Now_files/iybLbM7528548.jpeg" width="1179" height="608" alt="Final Footer Image" style="margin-top: 10px;">
+        </div>
+
+    </div>
+
+    <script>
+        // --- CONFIGURAÇÃO DO TEMPO DE DELAY ---
+        // Coloque aqui o tempo em segundos que o vídeo dura (ou quando quer mostrar a oferta)
+        var delayTimeInSeconds = 10; // Exemplo: 1200 segundos = 20 minutos
+        // var delayTimeInSeconds = 5; // USE ESTE PARA TESTAR (5 segundos)
+
+        setTimeout(function() {
+            // 1. Mostra a seção oculta
+            var hiddenSection = document.getElementById("hidden-section");
+            hiddenSection.style.display = "block";
+
+            // 2. Rola a tela até a seção de preços (Potes)
+            var pricingTarget = document.getElementById("pricing-target");
+            pricingTarget.scrollIntoView({ behavior: "smooth" });
+
+        }, delayTimeInSeconds * 1000); // Converte segundos para milissegundos
     </script>
+
 </body>
 </html>
